@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>REgistro</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <h2>Inscripción en curso</h2>
+    <form method="POST" action="{{ url_for('inscripcion') }}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" required>
+        <label for="curso">Curso:</label>
+        <select name="curso">
+            <!--  option[name=curso]{Curso $}*10 -->
+            <!-- option[value=curso$]{Curso $}*10 -->
+            <option value="curso1">Curso 1</option>
+            <option value="curso2">Curso 2</option>
+            <option value="curso3">Curso 3</option>
+            <option value="curso4">Curso 4</option>
+            <option value="curso5">Curso 5</option>
+            <option value="curso6">Curso 6</option>
+            <option value="curso7">Curso 7</option>
+            <option value="curso8">Curso 8</option>
+            <option value="curso9">Curso 9</option>
+            <option value="curso10">Curso 10</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    {% endblock %}
+
+</body>
+</html>
